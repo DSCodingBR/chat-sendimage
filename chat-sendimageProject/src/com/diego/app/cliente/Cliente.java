@@ -12,6 +12,7 @@ import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 import java.nio.channels.FileChannel;
+import java.util.Random;
 import java.util.Scanner;
 
 import javax.swing.JFileChooser;
@@ -107,6 +108,8 @@ public class Cliente {
 		private void salvar(FileMessage message) {// METODO QUE VAI SALVAR O ARQUIVO!
 			try {
 				
+				Thread.sleep(new Random().nextInt(1000));// PRA GARANTIR UM TEMPO DIFERENTE NESSE SLEEP PARA CADA EXECUCAO//A CADA 1000 VALE 1 SEGUNDO, ENTRE 0 e 1 SEG
+				
 				long time = System.currentTimeMillis();//VOU PEGAR O TEMPO, O HORARIO DA EXECUCAO DA LINHA
 				
 				
@@ -123,11 +126,13 @@ public class Cliente {
 				e.printStackTrace();
 			}catch (IOException e) {
 				e.printStackTrace();
+			}catch (Exception e) {
+				e.printStackTrace();
 			}
 			
 		}
 
-		private void imprime(FileMessage message) {//METODO QUE VAI IMPRIMIR NO CONSOLE O CONTEUDO QUE RECEBEMOS DO ARQUIVO
+		private void imprime(FileMessage message) {//METODO QUE VAI IMPRIMIR NO CONSOLE O CONTEUDO QUE RECEBEMOS DO ARQUIVO NAO VAI MAIS POS SUBISTITUI PLEO SALVAR
 			try {
 				FileReader fileReader = new FileReader(message.getFile());//COMECARMOS A LEITURA DO ARQUIVO
 				BufferedReader bufferedReader = new BufferedReader(fileReader);
