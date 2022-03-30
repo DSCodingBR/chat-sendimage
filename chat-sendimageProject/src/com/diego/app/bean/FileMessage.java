@@ -3,7 +3,7 @@ package com.diego.app.bean;
 import java.io.File;
 import java.io.Serializable;
 
-public class FileMessage implements Serializable {	// classe responsavel pelo conteudo da mensagem, IMPORTNATO Serializable POIS IREI PRECISAR Q MEU OBJETO SEJA SERIALIZADO
+public class FileMessage implements Serializable {	// CLASSE RESPONSAVEL PELO CONTEUDO DA MENSAGEM, IMPORTNATO Serializable POIS IREI PRECISAR Q MEU OBJETO SEJA SERIALIZADO
 	private String client;// QUE SERA O NOME DO CLIENTE QUE ESTA ENVIANDO A MENSAGEM
 	private File file;// QUE IRA CONTER O ARQUIVO QUE SERA ENVIADO
 	
